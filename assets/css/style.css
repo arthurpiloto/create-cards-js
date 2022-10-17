@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
-h1 {
-    color: red;
+.container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
 }

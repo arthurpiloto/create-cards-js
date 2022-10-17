@@ -37,7 +37,6 @@ class Card extends HTMLElement {
         const style = document.createElement(`style`)
         style.textContent = `
             .card {
-                margin: 16px;
                 width: 400px;
                 height: 400px;
                 background-color: ${this.bgcolor};
