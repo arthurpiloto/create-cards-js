@@ -19,11 +19,11 @@ const createCard = async () => {
         card.turma = element.turma
         card.status = element.status
 
-        if (card.status.toLowerCase() == `aprovado`) {
+        if (card.status == `aprovado`) {
             card.bgcolor = `#146551`
-        } else if (card.status.toLowerCase() == `desistente`) {
+        } else if (card.status == `desistente`) {
             card.bgcolor = `#FFA868`
-        } else if (card.status.toLowerCase() == `reprovado`) {
+        } else if (card.status == `reprovado`) {
             card.bgcolor = `#E51C00`
         }
 

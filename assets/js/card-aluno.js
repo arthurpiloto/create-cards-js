@@ -38,11 +38,12 @@ class Card extends HTMLElement {
         const style = document.createElement(`style`)
         style.textContent = `
             .card {
+                padding: 8px;
                 width: 400px;
-                height: 400px;
+                height: 600px;
                 background-color: ${this.bgcolor};
                 display: grid;
-                grid-template-rows: 20% 1fr 20%;
+                grid-template-rows: 20% 60% 20%;
                 place-items: center;
             }
             .card__titulo {
@@ -50,11 +51,12 @@ class Card extends HTMLElement {
                 font-size: 1.5rem;
             }
             .card__imagem {
-                width: 60%;
+                width: 90%;
                 height: 100%;
                 background-image: url(${this.foto});
                 background-size: cover;
                 background-repeat: no-repeat;
+                background-position: center;
             }
             .card__turma {
                 color: #FFF;
