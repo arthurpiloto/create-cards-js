@@ -3,6 +3,26 @@ class Card extends HTMLElement {
     constructor() {
         super()
         this.shadow = this.attachShadow({mode: `open`})
+        this.nome = `Nome do Aluno`
+        this.bgcolor = `tomato`
+    }
+
+    // MÉTODO QUE OBSERVA AS TAGS QUE POSSUEM O ATRIBUTO DESEJADO
+    static get observedAttributes() {
+        return [`nome`, `bgcolor`]
+    }
+
+    // OBSERVA QUANDO O ATRIBUTO É MUDADO E ATUALIZA-O
+    attributeChangedCallback(nameAttr, oldValue, newValue) {
+        // SUBSTITUI TODOS OS IF`s
+        this[nameAttr] = newValue
+
+        // if (nameAttr == `nome`){
+        //     this.nome = newValue 
+        // }
+        // if (nameAttr == `bgcolor`) {
+        //     this.bgcolor = newValue
+        // }
     }
 
     // SEMELHANTE A CLASSE CONSTRUTORA DO KOTLIN (onCreate) - SEMPRE QUE A CLASSE Card FOR CHAMADA A PRIMEIRA COISA PUXADA PARA EXECUÇÃO DEPOIS DO constructor() SERÁ ELA
@@ -19,7 +39,7 @@ class Card extends HTMLElement {
                 margin: 16px;
                 width: 400px;
                 height: 400px;
-                background-color: tomato;
+                background-color: ${this.bgcolor};
                 display: grid;
                 grid-template-rows: 20% 1fr 20%;
                 place-items: center;
@@ -48,7 +68,7 @@ class Card extends HTMLElement {
         card.classList.add(`card`)
         // PADRÃO DE NOMENCLATURA CSS - BEM
         card.innerHTML = `
-            <div class="card__titulo">Arthur</div>
+            <div class="card__titulo">${this.nome}</div>
             <div class="card__imagem"></div>
             <div class="card__turma">DS2M</div>
         `
