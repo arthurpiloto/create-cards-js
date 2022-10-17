@@ -3,12 +3,20 @@ class card extends HTMLElement {
     constructor() {
         super()
         this.shadow = this.attachShadow({mode: `open`})
-        
-        // A PARTIR DAQUI O CÓDIGO DESEJADO PELO DEV É INSERIDO
-        const titulo = document.createElement(`h1`)
-        titulo.textContent = `Arthur Piloto`
+    }
 
-        this.shadow.appendChild(titulo)
+    connectedCallback() {
+        this.shadow.appendChild(this.component())
+    }
+
+    component() {
+        const card = document.createElement(`div`)
+        card.innerHTML = `
+            <div>Arthur</div>
+            <div></div>
+            <div>DS2M</div>
+        `
+        return card
     }
 }
 
