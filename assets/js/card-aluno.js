@@ -16,10 +16,27 @@ class Card extends HTMLElement {
         const style = document.createElement(`style`)
         style.textContent = `
             .card {
-                margin: 0;
+                margin: 16px;
                 width: 400px;
                 height: 400px;
                 background-color: tomato;
+                display: grid;
+                grid-template-rows: 20% 1fr 20%;
+                place-items: center;
+            }
+            .card__titulo {
+                color: #FFF;
+                font-size: 1.5rem;
+            }
+            .card__imagem {
+                width: 60%;
+                height: 100%;
+                background-image: url(https://static.vecteezy.com/ti/vetor-gratis/t2/1993889-icone-personagem-avatar-mulher-latina-bonita-gr%C3%A1tis-vetor.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .card__turma {
+                color: #FFF;
             }
         `
         return style
@@ -29,10 +46,11 @@ class Card extends HTMLElement {
     component() {
         const card = document.createElement(`div`)
         card.classList.add(`card`)
+        // PADRÃO DE NOMENCLATURA CSS - BEM
         card.innerHTML = `
-            <div>Arthur</div>
-            <div></div>
-            <div>DS2M</div>
+            <div class="card__titulo">Arthur</div>
+            <div class="card__imagem"></div>
+            <div class="card__turma">DS2M</div>
         `
         return card
     }
