@@ -6,11 +6,12 @@ class Card extends HTMLElement {
         this.nome = `Nome do Aluno`
         this.bgcolor = `tomato`
         this.turma = `Turma do Aluno`
+        this.foto = `Foto do Aluno`
     }
 
     // MÉTODO QUE OBSERVA AS TAGS QUE POSSUEM O ATRIBUTO DESEJADO
     static get observedAttributes() {
-        return [`nome`, `bgcolor`, `turma`]
+        return [`nome`, `bgcolor`, `turma`, `foto`]
     }
 
     // OBSERVA QUANDO O ATRIBUTO É MUDADO E ATUALIZA-O
@@ -51,7 +52,7 @@ class Card extends HTMLElement {
             .card__imagem {
                 width: 60%;
                 height: 100%;
-                background-image: url(https://static.vecteezy.com/ti/vetor-gratis/t2/1993889-icone-personagem-avatar-mulher-latina-bonita-gr%C3%A1tis-vetor.jpg);
+                background-image: url(${this.foto});
                 background-size: cover;
                 background-repeat: no-repeat;
             }
