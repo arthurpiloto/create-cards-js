@@ -5,11 +5,12 @@ class Card extends HTMLElement {
         this.shadow = this.attachShadow({mode: `open`})
         this.nome = `Nome do Aluno`
         this.bgcolor = `tomato`
+        this.turma = `Turma do Aluno`
     }
 
     // MÉTODO QUE OBSERVA AS TAGS QUE POSSUEM O ATRIBUTO DESEJADO
     static get observedAttributes() {
-        return [`nome`, `bgcolor`]
+        return [`nome`, `bgcolor`, `turma`]
     }
 
     // OBSERVA QUANDO O ATRIBUTO É MUDADO E ATUALIZA-O
@@ -70,7 +71,7 @@ class Card extends HTMLElement {
         card.innerHTML = `
             <div class="card__titulo">${this.nome}</div>
             <div class="card__imagem"></div>
-            <div class="card__turma">DS2M</div>
+            <div class="card__turma">${this.turma}</div>
         `
         return card
     }
